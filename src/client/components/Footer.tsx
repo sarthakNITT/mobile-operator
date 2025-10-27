@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import LocusLogo from "../../../public/locusLogo.svg"
+import ParticleBackground from './ParticleBackground';
 
 const footerSections = [
   {
@@ -44,7 +45,10 @@ export default function Footer() {
   });
 
   return (
-    <footer className="bg-gradient-to-t from-[#65cdb2]/20 to-black py-16 mt-12">
+    <>
+    <div className='bg-black'>
+    <ParticleBackground/>
+    <footer className="relative bg-gradient-to-t from-[#65cdb2]/20 to-black py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-col items-center justify-between" ref={ref}>
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -114,5 +118,7 @@ export default function Footer() {
         </motion.div>
       </div>
     </footer>
+    </div>
+    </>
   );
 }
