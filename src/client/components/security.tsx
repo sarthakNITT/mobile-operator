@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+import { ShieldCheck, CheckCircle, FileText } from "lucide-react";
 const ACCENT = "#65cdb2";
 
 const headingVariant = {
@@ -62,7 +62,7 @@ const headingVariant = {
   
                   <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <motion.ul variants={listContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-3">
-                      {items.map((it, idx) => (
+                      {items.map((it) => (
                         <motion.li key={it.title} variants={listItem} className="flex items-start gap-3 bg-black/30 rounded-lg p-3 border border-white/4">
                           <div className="flex-shrink-0 mt-1">
                             <motion.div

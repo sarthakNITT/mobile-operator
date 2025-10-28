@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
-const ACCENT = "#65cdb2";
+import React, { useState, useMemo  } from "react";
+import { motion } from "framer-motion";
+import { ShieldCheck, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
 
 const DEFAULT_RESOURCES = [
   { title: "API docs", href: "#", desc: "Reference for REST endpoints, examples and SDK usage.", icon: "api" },
@@ -9,7 +8,7 @@ const DEFAULT_RESOURCES = [
   { title: "Security brief", href: "#", desc: "High-level security, compliance and data handling guide.", icon: "shield" },
 ];
 
-function Icon({ name }) {
+function Icon({ name }: {name : string}) {
   switch (name) {
     case "book":
       return <BookOpen className="w-5 h-5" />;

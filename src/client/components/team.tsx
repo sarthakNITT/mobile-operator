@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Founder1 from "../../../public/Founder1.jpg"
 import Founder2 from "../../../public/Founder2.jpg"
-const ACCENT = "#65cdb2";
 
   const members = [
     {
@@ -88,7 +86,7 @@ const ACCENT = "#65cdb2";
             className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center"
           >
             {members.map((m) => {
-              const initials = m.name
+              m.name
                 .split(" ")
                 .map((s) => s[0])
                 .slice(0, 2)

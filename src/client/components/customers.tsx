@@ -1,7 +1,5 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
-const ACCENT = "#65cdb2";
 
 const logos2 = [
     { id: "acme", name: "Acme Inc" },
@@ -25,7 +23,7 @@ const logos2 = [
     },
   ];
   
-  function LogoTile({ name }) {
+  function LogoTile({ name } : {name: string}) {
     // simple SVG monogram for each partner (keeps the layout robust without assets)
     return (
       <motion.div

@@ -16,8 +16,6 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { IntegrationsSection } from "@/components/integrations";
 import { PricingBeta } from "@/components/pricingBeta";
 import QuickPitchSection from "@/components/QuickPitchSection";
-import Resources from "@/components/resources";
-import SecurityCompliance from "@/components/security";
 import Team from "@/components/team";
 import Footer from "@/components/Footer";
 import Customers from "@/components/customers";
@@ -37,7 +35,20 @@ type SectionKey =
   | "footer";
 
 const clamp = (v: number, a = -1, b = 1) => Math.max(a, Math.min(b, v));
-
+const order: SectionKey[] = [
+  "heroSpacer",
+  "features",
+  "howItWorks",
+  "quickPitch",
+  "integrations",
+  "pricing",
+  "customers",
+  "faq",
+  "security",
+  "team",
+  "resources",
+  "footer",
+];
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -56,22 +67,6 @@ export default function Home() {
     footer: null,
   });
 
-  const order: SectionKey[] = [
-    "heroSpacer",
-    "features",
-    "howItWorks",
-    "quickPitch",
-    "integrations",
-    "pricing",
-    "customers",
-    "faq",
-    "security",
-    "team",
-    "resources",
-    "footer",
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
   const [showNav, setShowNav] = useState(false);
 
   // used for keyboard discrete jumps (kept)
@@ -88,7 +83,7 @@ export default function Home() {
 
   // Helper: returns motion-derived style bindings for a section at index `i` (where i = its order index)
   // offset = scrollPos - i  (0 means centered; +1 means one viewport scrolled past; -1 means it is incoming from above)
-  const makeSectionTransforms = (index: number) => {
+    const useSectionTransforms = (index: number) => {
     // limited offset in [-1,1] so transforms only affect near neighbors
     const rawOffset = useTransform(scrollPos, (v) => clamp(v - index, -1, 1));
 
@@ -108,9 +103,9 @@ export default function Home() {
 
   // create transforms for our three overlay sections (we know their indexes in `order`)
   // heroSpacer = index 0, features = index 1, quickPitch = index 2, howItWorks = index 3
-  const featuresTransforms = makeSectionTransforms(1);
-  const howItWorksTransforms = makeSectionTransforms(2);
-  const quickPitchTransforms = makeSectionTransforms(3);
+  const featuresTransforms = useSectionTransforms(1);
+  const howItWorksTransforms = useSectionTransforms(2);
+  const quickPitchTransforms = useSectionTransforms(3);
 
   // ---- update scrollPos on container scroll (rAF) ----
   const rafRef = useRef<number | null>(null);
@@ -155,7 +150,7 @@ export default function Home() {
         if (!foundKey) return;
         const idx = order.indexOf(foundKey);
         if (idx !== -1) {
-          setActiveIndex(idx);
+          // setActiveIndex(idx);
           lastKnownIndexRef.current = idx;
           setShowNav(idx > 0);
         }
@@ -173,7 +168,6 @@ export default function Home() {
     });
 
     return () => obs.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ---- keyboard navigation (discrete jumps) kept ----
@@ -234,7 +228,6 @@ export default function Home() {
             const idx = order.indexOf(key);
             if (idx !== -1) {
               lastKnownIndexRef.current = idx;
-              setActiveIndex(idx);
               setShowNav(idx > 0);
             }
           }}

@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ACCENT = "#65cdb2";
 
@@ -26,20 +26,18 @@ const FEATURES = [
     title: "Safe & Auditable Transactions",
     description:
       "All transactions run through a policy engine for full traceability, reconciliation, and compliance.",
-  },
-];
-
-export default function FeaturesSection(): JSX.Element {
-  const [index, setIndex] = useState(0);
-  const maxIndex = FEATURES.length - 1;
-
-  // lazy-play state for video iframe (improves page perf)
-  const [videoPlaying, setVideoPlaying] = useState(false);
-
-  // autoplay / pause handling
-  const [isPaused, setIsPaused] = useState(false);
-  const autoRef = useRef<number | null>(null);
-
+    },
+  ];
+  
+  export default function FeaturesSection() {
+    const [index, setIndex] = useState(0);
+    const maxIndex = FEATURES.length - 1;
+    
+    // autoplay / pause handling
+    const [isPaused, setIsPaused] = useState(false);
+    const autoRef = useRef<number | null>(null);
+    const next = () => setIndex((s) => (s >= maxIndex ? 0 : s + 1));
+    const prev = () => setIndex((s) => (s <= 0 ? maxIndex : s - 1));
   // swipe support
   const stageRef = useRef<HTMLDivElement | null>(null);
   const startX = useRef<number | null>(null);
@@ -52,7 +50,7 @@ export default function FeaturesSection(): JSX.Element {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [next, prev]);
 
   // auto-advance
   useEffect(() => {
@@ -83,10 +81,7 @@ export default function FeaturesSection(): JSX.Element {
       el.removeEventListener("touchstart", handleStart);
       el.removeEventListener("touchend", handleEnd);
     };
-  }, []);
-
-  const next = () => setIndex((s) => (s >= maxIndex ? 0 : s + 1));
-  const prev = () => setIndex((s) => (s <= 0 ? maxIndex : s - 1));
+  }, [next, prev]);
 
   // reactionary progress percentage — used for progress bar animation
   const progress = ((index + 1) / (maxIndex + 1)) * 100;

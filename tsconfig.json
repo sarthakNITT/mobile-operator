@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,10 +24,18 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@/*": ["client/*"],
-      "@shared/*": ["shared/*"]
+      "@/*": [
+        "client/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ]
     },
-    "types": ["node"]
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -34,5 +46,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "**/*.test.ts"
+  ]
 }

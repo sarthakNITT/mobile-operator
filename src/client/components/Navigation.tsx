@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import LocusLogo from "../../../public/locusLogo.svg"
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
 
 export default function Navigation({ onNavigate }: { onNavigate?: (id: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);

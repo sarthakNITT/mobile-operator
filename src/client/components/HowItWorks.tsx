@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 const ACCENT = "#65cdb2";
 
 const STEPS = [
@@ -24,7 +24,7 @@ const STEPS = [
     },
   ];
   
-  export function HowItWorks(): JSX.Element {
+  export function HowItWorks() {
     const [index, setIndex] = useState(0);
     const maxIndex = STEPS.length - 1;
     const autoRef = useRef<number | null>(null);

@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React, { useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
-const ACCENT = "#65cdb2";
+import { ChevronDown } from "lucide-react";
 
 const DEFAULT_QAS = [
     { q: "Is Locus PCI compliant?", a: "We are building towards PCI/SOC2 readiness — reach out for details." },

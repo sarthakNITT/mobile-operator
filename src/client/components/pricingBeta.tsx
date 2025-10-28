@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
-const ACCENT = "#65cdb2";
 
-export function PricingBeta(): JSX.Element {
+export function PricingBeta() {
     const [email, setEmail] = useState<string>("");
     const [company, setCompany] = useState<string>("");
     const [submitted, setSubmitted] = useState<boolean>(false);

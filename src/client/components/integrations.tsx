@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+import { Cpu, Cloud, Database, Link } from "lucide-react";
 const ACCENT = "#65cdb2";
 
 const integrations = [
@@ -12,9 +12,8 @@ const integrations = [
   
   const logos = ["Acme", "FinCorp", "Ledgerwise", "MarketX", "Nimbus", "BlueBank"];
   
-  export function IntegrationsSection(): JSX.Element {
+  export function IntegrationsSection() {
     const [modalOpen, setModalOpen] = useState(false);
-    const [focused, setFocused] = useState<number | null>(null);
   
     // Motion variants
     const card = {
@@ -213,8 +212,6 @@ const integrations = [
                     viewport={{ once: true }}
                     variants={card}
                     custom={i}
-                    onMouseEnter={() => setFocused(i)}
-                    onMouseLeave={() => setFocused(null)}
                     className={`p-4 rounded-xl border bg-white/3 transition-shadow hover:shadow-xl`}
                     style={{ borderColor: "rgba(255,255,255,0.04)", backdropFilter: "blur(6px)" }}
                   >

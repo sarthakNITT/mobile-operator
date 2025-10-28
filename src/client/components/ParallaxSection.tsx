@@ -90,4 +90,5 @@ const ParallaxSectionMotion = forwardRef<HTMLElement, Props>(
   }
 );
 
+ParallaxSectionMotion.displayName = "ParallaxSectionMotion";
 export default ParallaxSectionMotion;

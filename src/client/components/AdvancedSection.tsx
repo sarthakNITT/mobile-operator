@@ -1,5 +1,6 @@
 "use client"
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
 const features = [
@@ -27,7 +28,7 @@ export default function AdvancedSection() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Advanced AI Testing</h2>
             <p className="text-sm text-gray-400 mb-8">
-              Our machine learning models continuously learn from your app's behavior, 
+              Our machine learning models continuously learn from your app&apos;s behavior,
               creating smarter test cases and identifying edge cases that traditional testing misses.
             </p>
             
@@ -53,7 +54,7 @@ export default function AdvancedSection() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="advanced-image"
           >
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
               alt="AI neural network visualization" 
               className="rounded-xl w-full opacity-80" 

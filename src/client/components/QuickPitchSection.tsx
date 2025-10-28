@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+import { motion } from "framer-motion";
 const ACCENT = "#65cdb2";
 
 // ---------- Quick Pitch / Key Stats ----------
-export default function QuickPitchSection(): JSX.Element {
+export default function QuickPitchSection() {
   const stats = [
     { label: "Closed beta", value: "Invite only", hint: "Apply" },
     { label: "Integrations", value: "Bank rails & Webhooks", hint: "SDKs" },
@@ -107,7 +105,7 @@ export default function QuickPitchSection(): JSX.Element {
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.04 }}
             >
               <div className="grid grid-cols-1 gap-4">
-                {stats.map((s, i) => (
+                {stats.map((s) => (
                   <motion.div
                     key={s.label}
                     whileHover={{ scale: 1.02, y: -4 }}
