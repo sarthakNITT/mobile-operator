@@ -75,7 +75,7 @@ export default function QuickPitchSection(): JSX.Element {
                 We make your agents <span style={{ color: ACCENT }}>pay</span>.
               </h3>
 
-              <p className="mt-4 text-gray-300 max-w-2xl text-sm md:text-base leading-relaxed">
+              <p className="mt-4 text-gray-300 max-w-2xl text-[14px] md:text-base leading-relaxed">
                 Connect agents to funds with policy-first controls — auditable, secure, and enterprise-ready.
                 Give agents identities, attach budgets and approvals, and watch every transaction stay
                 traceable and reconciled with your existing finance stack.
@@ -83,23 +83,15 @@ export default function QuickPitchSection(): JSX.Element {
 
               {/* CTA row */}
               <div className="mt-6 flex flex-wrap gap-3 items-center">
-                <motion.a
-                  whileHover={{ translateY: -4 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  href="#beta"
-                  className="inline-flex items-center gap-3 px-5 py-3 rounded-md bg-white text-black font-medium shadow-sm"
-                  aria-label="Request early access"
-                >
-                  Request early access
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ opacity: 0.9 }}
-                  href="#demo"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-white/8 text-sm text-gray-300"
-                >
-                  See demo
-                </motion.a>
+                <button className="cursor-pointer relative p-2 border border-[#65cdb2] text-[14px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                    Request early access
+                  </span>
+                  <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                </button>
+                <button className="cursor-pointer p-2 bg-[#65cdb2] text-black text-[14px] hover:opacity-80 transition-opacity duration-300">
+                  Request demo
+                </button>
 
                 <div className="ml-3 text-xs text-gray-400 hidden sm:inline">No credit card required</div>
               </div>

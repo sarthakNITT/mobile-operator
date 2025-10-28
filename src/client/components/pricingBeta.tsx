@@ -53,7 +53,7 @@ export function PricingBeta(): JSX.Element {
     const confettiPieces = Array.from({ length: 18 }).map((_, i) => ({ id: i }));
   
     return (
-      <section id="beta" className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-zinc-900 text-white py-24">
+      <section id="beta" className="relative overflow-hidden bg-gradient-to-br from-black via-[#65cdb2]-900 to-zinc-900 text-white py-24">
         {/* decorative gradient blobs */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <motion.div
@@ -81,19 +81,19 @@ export function PricingBeta(): JSX.Element {
           >
             <div className="md:col-span-2">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Closed beta — priority access for builders</h2>
-              <p className="text-gray-300 max-w-2xl text-lg">
+              <p className="text-gray-300 max-w-2xl text-[14px]">
                 We’re inviting product teams building infra, tools, and platform primitives. Apply for early access — approved teams get hands-on onboarding,
                 priority support, and a dedicated channel with the team.
               </p>
   
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300">
-                <li className="flex items-start gap-3">
-                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-white/10">✓</span>
-                  <span>Priority onboarding with a product engineer</span>
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-7 h-7 text-[#65cdb2] rounded-md bg-white/10">✓</span>
+                  <span className="text-[#65cdb2]">Priority onboarding with a product engineer</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-white/10">✓</span>
-                  <span>Early feature flags & feedback channel</span>
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-7 h-7 text-[#65cdb2] rounded-md bg-white/10">✓</span>
+                  <span className="text-[#65cdb2]">Early feature flags & feedback channel</span>
                 </li>
               </ul>
             </div>
@@ -114,7 +114,7 @@ export function PricingBeta(): JSX.Element {
                   </h3>
                   <p className="text-xs text-gray-300 mb-3">We’ll only use your email to contact you about the beta.</p>
   
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col w-full items-center gap-3">
                     <label className="sr-only" htmlFor="email">
                       Email address
                     </label>
@@ -129,7 +129,7 @@ export function PricingBeta(): JSX.Element {
                       aria-invalid={!!error}
                       aria-describedby={error ? "email-error" : undefined}
                       required
-                      className="w-full px-3 py-3 rounded-md bg-white/5 border border-white/8 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-offset-0 focus:ring-indigo-400"
+                      className="w-full px-2 py-2 text-[14px] rounded-md bg-white/5 border border-white/8 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-offset-0 focus:ring-indigo-400"
                     />
   
                     <label className="sr-only" htmlFor="company">
@@ -141,17 +141,15 @@ export function PricingBeta(): JSX.Element {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Company (optional)"
-                      className="w-full px-3 py-3 rounded-md bg-white/5 border border-white/8 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-offset-0 focus:ring-indigo-400"
+                      className="w-full px-2 py-2 text-[14px] rounded-md bg-white/5 border border-white/8 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-offset-0 focus:ring-indigo-400"
                     />
   
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        aria-disabled={isSubmitting}
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 font-semibold bg-gradient-to-r from-indigo-400 to-cyan-400 text-black shadow-md hover:scale-[1.02] active:scale-100 transition-transform"
-                      >
-                        <motion.span whileTap={{ scale: 0.96 }}>Request invite</motion.span>
+                    <div className="flex items-center w-full gap-3">
+                      <button disabled={isSubmitting} className="cursor-pointer relative p-2 pr-26 pl-26 border border-[#65cdb2] text-[14px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                        <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                          Request Invite
+                        </span>
+                        <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
                       </button>
                     </div>
   

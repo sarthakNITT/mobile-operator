@@ -179,40 +179,22 @@ export default function FeaturesSection(): JSX.Element {
                 >
                   {/* VIDEO: aspect-video ensures correct aspect ratio on all screens */}
                   <div className="w-full h-full flex items-center justify-center bg-transparent relative">
-                    {/* If user hasn't clicked 'play' yet we show a lightweight placeholder + play button */}
-                    {!videoPlaying ? (
-                      <button
-                        onClick={() => setVideoPlaying(true)}
-                        aria-label="Play demo"
-                        className="absolute inset-0 flex items-center justify-center group"
-                        title="Play demo"
-                      >
-                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition" />
-                        <div className="relative z-10 flex flex-col items-center gap-3">
-                          <div
-                            className="rounded-full p-4 md:p-6 flex items-center justify-center"
-                            style={{ background: "rgba(255,255,255,0.04)", border: `1px solid rgba(255,255,255,0.03)` }}
-                          >
-                            <Play className="w-6 h-6 md:w-8 md:h-8" />
-                          </div>
-                          <div className="text-sm text-gray-200">See Locus in action. Click to play the video</div>
-                        </div>
-                      </button>
-                    ) : (
+                    {/* If user hasn't clicked 'play' yet we show a lightweight placeholder + play button */}(
                       <div className="absolute inset-0">
                         {/* Use aspect-video to preserve 16:9 and ensure iframe covers container */}
                         <div className="w-full h-full aspect-video">
                           <iframe
+                            width="560"
+                            height="315"
                             src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7386653514535710720?compact=1"
                             title="Embedded demo"
-                            className="w-full h-full block border-0"
-                            style={{ background: "transparent" }}
-                            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                            allow="autoplay; fullscreen"
                             loading="lazy"
-                          />
+                            style={{ background: "transparent" }}
+                            className="w-full h-full block border-0 absolute inset-0 "
+                          ></iframe>
                         </div>
                       </div>
-                    )}
                   </div>
 
                   {/* Policy chip — compacted and cleaner */}
@@ -247,19 +229,18 @@ export default function FeaturesSection(): JSX.Element {
                     {FEATURES[index].title}
                   </h3>
 
-                  <p className="text-sm text-gray-300 mb-6">{FEATURES[index].description}</p>
+                  <p className="text-[14px] text-gray-300 mb-6">{FEATURES[index].description}</p>
 
                   <div className="flex items-center gap-4">
-                    <a
-                      href="#beta"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-black font-medium shadow-sm transform-gpu hover:-translate-y-0.5 transition"
-                    >
+                  <button className="cursor-pointer relative p-2 border border-[#65cdb2] text-[12px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                    <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                       Get early access
-                    </a>
-
-                    <a href="#integrations" className="text-sm text-gray-400 hover:text-white underline-offset-2">
-                      Learn more
-                    </a>
+                    </span>
+                    <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                  </button>
+                  <button className="cursor-pointer p-2 bg-[#65cdb2] text-black text-[12px] hover:opacity-80 transition-opacity duration-300">
+                    Learn More
+                  </button>
                   </div>
                 </motion.div>
 

@@ -162,7 +162,7 @@ const STEPS = [
                               <h4 className="text-lg font-semibold" style={{ color: ACCENT }}>
                                 {STEPS[index].title}
                               </h4>
-                              <p className="text-sm text-gray-300 mt-2">{STEPS[index].body}</p>
+                              <p className="text-[14px] text-gray-300 mt-2">{STEPS[index].body}</p>
   
                               {/* miniature timeline / badges */}
                               <div className="mt-4 flex flex-wrap gap-2">
@@ -211,7 +211,7 @@ const STEPS = [
             <div className="lg:col-span-6 w-full lg:w-1/2">
               <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
                 <h3 className="text-3xl font-bold mb-4">How Locus connects agents to funds</h3>
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-400 mb-6 text-[14px]">
                   From identity to execution, Locus provides a policy-first control plane for agentic payments. Define what agents can do — and be confident every payment is auditable.
                 </p>
   
@@ -238,12 +238,15 @@ const STEPS = [
                 </div>
   
                 <div className="mt-6 flex gap-4">
-                  <a href="#beta" className="px-5 py-3 rounded-md bg-white text-black font-semibold">
+                <button className="cursor-pointer relative p-2 border border-[#65cdb2] text-[12px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                     Request early access
-                  </a>
-                  <a href="#integrations" className="px-5 py-3 rounded-md border border-white/8 text-white">
-                    See integrations
-                  </a>
+                  </span>
+                  <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                </button>
+                <button className="cursor-pointer p-2 bg-[#65cdb2] text-black text-[12px] hover:opacity-80 transition-opacity duration-300">
+                  See Integrations
+                </button>
                 </div>
               </motion.div>
             </div>

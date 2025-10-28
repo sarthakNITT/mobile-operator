@@ -222,7 +222,23 @@ export default function Home() {
           showNav ? "translate-y-0 opacity-100 blur-0" : "-translate-y-full opacity-0 blur-sm"
         }`}
       >
-        <Navigation />
+        <Navigation
+          onNavigate={(id: string) => {
+            const key = id.replace("#", "") as SectionKey;
+            const el = sectionRefs.current[key] as HTMLElement | null;
+            const sc = scrollContainerRef.current;
+            if (!el || !sc) return;
+            // scroll container to the element's offsetTop (works forwards & backwards)
+            sc.scrollTo({ top: el.offsetTop, behavior: "smooth" });
+            // keep internal index in sync
+            const idx = order.indexOf(key);
+            if (idx !== -1) {
+              lastKnownIndexRef.current = idx;
+              setActiveIndex(idx);
+              setShowNav(idx > 0);
+            }
+          }}
+        />
       </div>
 
       {/* HERO: fixed under content */}
@@ -344,10 +360,6 @@ export default function Home() {
 
         <section ref={attachRef("team")} id="team" className="relative z-60">
           <Team />
-        </section>
-
-        <section ref={attachRef("resources")} id="resources" className="relative z-60">
-          <Resources />
         </section>
 
         <section ref={attachRef("footer")} id="footer" className="relative z-60">

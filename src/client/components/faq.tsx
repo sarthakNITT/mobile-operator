@@ -17,11 +17,11 @@ const DEFAULT_QAS = [
     const toggle = (i: number) => setOpen(open === i ? null : i);
   
     return (
-      <section id="faq" className="bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-white py-20">
+      <section id="faq" className="bg-gradient-to-b from-black via-black-900 to-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between gap-6 mb-8">
             <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">Frequently asked</h3>
-            <p className="text-sm text-gray-400 max-w-xl">Everything engineers and founders ask when evaluating an infra partner.</p>
+            <p className="text-sm text-[#65cdb2] max-w-xl">Everything engineers and founders ask when evaluating an infra partner.</p>
           </div>
   
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -72,22 +72,6 @@ const DEFAULT_QAS = [
                     </motion.div>
                   )}
                 </AnimatePresence>
-  
-                <div className="mt-4 flex gap-3">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-500/80 shadow-sm"
-                  >
-                    Contact sales
-                  </a>
-  
-                  <button
-                    onClick={() => navigator.clipboard?.writeText(qa.a)}
-                    className="ml-auto text-xs text-gray-300 underline-offset-2 hover:underline"
-                  >
-                    Copy answer
-                  </button>
-                </div>
               </motion.article>
             ))}
           </div>

@@ -56,12 +56,8 @@ const integrations = [
                   </div>
   
                   <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setModalOpen(true)}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/5 hover:bg-white/8 transition"
-                      aria-label="Open architecture diagram"
-                    >
-                      View diagram
+                    <button onClick={() => setModalOpen(true)} className="cursor-pointer p-2 bg-[#65cdb2] text-black text-[14px] hover:opacity-80 transition-opacity duration-300">
+                      Chat with the team
                     </button>
                   </div>
                 </div>
@@ -268,10 +264,13 @@ const integrations = [
                     </div>
                   </div>
   
-                  <div className="mt-4 flex gap-3">
-                    <a href="#beta" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-black font-medium">
-                      Request pilot
-                    </a>
+                  <div className="mt-4 flex gap-3 items-center">
+                    <button className="cursor-pointer relative p-2 border border-[#65cdb2] text-[14px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                      <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                        Join our beta
+                      </span>
+                      <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                    </button>
                     <a href="#resources" className="text-sm text-gray-400 underline-offset-2">See docs</a>
                   </div>
                 </div>

@@ -56,7 +56,7 @@ export default function Customers() {
     }, []);
   
     return (
-      <section id="customers" className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-zinc-900 text-white py-24">
+      <section id="customers" className="relative overflow-hidden bg-gradient-to-tr from-black via-[#65cdb2]-900 to-zinc-900  text-white py-24">
         {/* Decorative blobs */}
   
         <div className="max-w-6xl mx-auto px-6">
@@ -116,7 +116,7 @@ export default function Customers() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -12 }}
                     transition={{ duration: 0.45 }}
-                    className="text-lg md:text-xl text-white/90 leading-relaxed"
+                    className="text-[14px] md:text-xl text-[#65cdb2] leading-relaxed"
                     aria-live="polite"
                   >
                     “{testimonials[index].quote}”
@@ -167,15 +167,15 @@ export default function Customers() {
                 <h4 className="text-lg font-semibold text-white">Join these teams</h4>
                 <p className="mt-2 text-sm text-white/70">Start a trial, get a demo, or build with our SDKs.</p>
                 <div className="mt-4 flex gap-3">
-                  <a
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black font-semibold shadow hover:scale-[1.02]"
-                    href="#demo"
-                  >
-                    Request demo
-                  </a>
-                  <a href="#signup" className="px-4 py-2 rounded-xl border border-white/8 text-sm text-white/90">
-                    Start trial
-                  </a>
+                <button className="cursor-pointer relative p-2 border border-[#65cdb2] text-[14px] text-[#65cdb2] overflow-hidden group transition-colors duration-300">
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                    Join our beta
+                  </span>
+                  <span className="absolute inset-0 bg-[#65cdb2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                </button>
+                <button className="cursor-pointer p-2 bg-[#65cdb2] text-black text-[14px] hover:opacity-80 transition-opacity duration-300">
+                  Chat with the team
+                </button>
                 </div>
   
                 <div className="mt-4 text-xs text-white/50">Or try our quickstart in <span className="font-medium">5 minutes</span>.</div>

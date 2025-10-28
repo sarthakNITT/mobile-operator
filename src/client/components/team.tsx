@@ -1,20 +1,25 @@
 import React, { useEffect, useRef, useState, useId, useMemo  } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, Wallet, ShieldCheck, ChevronLeft, ChevronRight, Cpu, Cloud, Database, Link, CheckCircle, FileText, ChevronDown, BookOpen, Link as LinkIcon  } from "lucide-react";
+import Image from "next/image";
+import Founder1 from "../../../public/Founder1.jpg"
+import Founder2 from "../../../public/Founder2.jpg"
 const ACCENT = "#65cdb2";
 
   const members = [
     {
-      name: "Founder 1",
-      role: "CEO — ex-payments, YC F25",
-      bio: "Product-led founder, previously built infra for consumer payments at scale.",
+      name: "Cole Dermott",
+      role: "Founder",
+      bio: "I like moving money.",
       link: "#",
+      image: Founder1
     },
     {
-      name: "Founder 2",
-      role: "CTO — distributed systems",
-      bio: "Systems-first engineer who loves low-latency, fault-tolerant architectures.",
+      name: "Eliot Lee",
+      role: "Founder",
+      bio: "I like building agents.",
       link: "#",
+      image: Founder2
     },
   ];
   
@@ -46,14 +51,14 @@ const ACCENT = "#65cdb2";
       typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   
     return (
-      <section id="team" className="relative overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black text-white py-20">
+      <section id="team" className="relative overflow-hidden bg-black text-white py-20">
         {/* decorative blobs */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.06, rotate: 10 }}
           transition={{ duration: 1.2 }}
-          className="pointer-events-none absolute left-[-8%] top-0 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-indigo-400 blur-3xl"
+          className="pointer-events-none absolute left-[-8%] top-0 w-[420px] h-[420px] rounded-full bg-black blur-3xl"
         />
   
         <motion.div
@@ -102,13 +107,14 @@ const ACCENT = "#65cdb2";
                     {...(prefersReducedMotion ? {} : float)}
                   >
                     <div className="relative w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/6">
-                      <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-purple-500/30 via-pink-400/25 to-indigo-400/20 blur-sm opacity-60" />
-                      <div className="relative z-10 w-20 h-20 rounded-full flex items-center justify-center bg-gradient-to-br from-zinc-800/50 to-black/50 text-2xl font-bold">{initials}</div>
+                      <div className="absolute -inset-0.5 rounded-full blur-sm opacity-60" />
+                      {/* <div className="relative z-10 w-20 h-20 rounded-full flex items-center justify-center bg-gradient-to-br from-zinc-800/50 to-black/50 text-2xl font-bold">{initials}</div> */}
+                      <Image src={m.image} className="rounded-[100]" alt="founder image"/>
                     </div>
                   </motion.div>
   
                   <div className="mt-2 font-semibold text-lg">{m.name}</div>
-                  <div className="mt-1 text-xs text-zinc-300">{m.role}</div>
+                  <div className="text-xs text-zinc-300">{m.role}</div>
   
                   <p className="mt-4 text-sm text-zinc-300 line-clamp-3">{m.bio}</p>
   
