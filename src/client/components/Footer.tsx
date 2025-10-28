@@ -71,10 +71,10 @@ export default function Footer() {
               Revolutionizing mobile app testing with AI-powered automation and intelligent quality assurance.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/paywithlocus" className="text-gray-400 hover:text-white transition-colors">
                 <span className="text-xs">Twitter</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/paywithlocus/posts/?feedView=all" className="text-gray-400 hover:text-white transition-colors">
                 <span className="text-xs">LinkedIn</span>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -113,7 +113,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-gray-400">© 2024 Locus. All rights reserved.</p>
-            <p className="text-xs text-gray-400 mt-4 md:mt-0">Built for mobile development teams worldwide</p>
+            <p className="text-xs text-gray-400 mt-4 md:mt-0">Locus: the platform for safe and auditable agentic payments.</p>
           </div>
         </motion.div>
       </div>
